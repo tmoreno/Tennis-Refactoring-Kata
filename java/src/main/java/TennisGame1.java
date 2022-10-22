@@ -27,11 +27,7 @@ public class TennisGame1 implements TennisGame {
 
         if (pointsPlayer1 >=4 || pointsPlayer2 >=4)
         {
-            int minusResult = pointsPlayer1 - pointsPlayer2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
+            score = gamePointScore();
         }
         else
         {
@@ -77,5 +73,15 @@ public class TennisGame1 implements TennisGame {
             default:
                 return"Deuce";
         }
+    }
+
+    private String gamePointScore() {
+        String score;
+        int minusResult = pointsPlayer1 - pointsPlayer2;
+        if (minusResult==1) score ="Advantage player1";
+        else if (minusResult ==-1) score ="Advantage player2";
+        else if (minusResult>=2) score = "Win for player1";
+        else score ="Win for player2";
+        return score;
     }
 }
