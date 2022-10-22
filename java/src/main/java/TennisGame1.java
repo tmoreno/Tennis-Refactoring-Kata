@@ -72,32 +72,22 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String gameScore() {
-        String score = "";
-
-        score = playerScore(score, pointsPlayer1);
-
-        score += "-";
-
-        score = playerScore(score, pointsPlayer2);
-
-        return score;
+        return playerScore(pointsPlayer1) + "-" + playerScore(pointsPlayer2);
     }
 
-    private static String playerScore(String score, int pointsPlayer) {
+    private static String playerScore(int pointsPlayer) {
         switch (pointsPlayer) {
             case 0:
-                score += "Love";
-                break;
+                return "Love";
+
             case 1:
-                score += "Fifteen";
-                break;
+                return "Fifteen";
+
             case 2:
-                score += "Thirty";
-                break;
-            case 3:
-                score += "Forty";
-                break;
+                return "Thirty";
+
+            default:
+                return "Forty";
         }
-        return score;
     }
 }
