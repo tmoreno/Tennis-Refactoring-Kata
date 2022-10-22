@@ -59,23 +59,18 @@ public class TennisGame1 implements TennisGame {
     }
 
     private String drawScore() {
-        String score;
-        switch (pointsPlayer1)
-        {
+        switch (pointsPlayer1) {
             case 0:
-                    score = "Love-All";
-                break;
-            case 1:
-                    score = "Fifteen-All";
-                break;
-            case 2:
-                    score = "Thirty-All";
-                break;
-            default:
-                    score = "Deuce";
-                break;
+                return "Love-All";
 
+            case 1:
+                return"Fifteen-All";
+
+            case 2:
+                return"Thirty-All";
+
+            default:
+                return"Deuce";
         }
-        return score;
     }
 }
