@@ -22,7 +22,7 @@ public class TennisGame1 implements TennisGame {
         int tempScore=0;
         if (pointsPlayer1 == pointsPlayer2)
         {
-            score = drawScore();
+            score = drawScore(pointsPlayer1);
         }
         else if (pointsPlayer1 >=4 || pointsPlayer2 >=4)
         {
@@ -58,8 +58,8 @@ public class TennisGame1 implements TennisGame {
         return score;
     }
 
-    private String drawScore() {
-        switch (pointsPlayer1) {
+    private String drawScore(int playerPoints) {
+        switch (playerPoints) {
             case 0:
                 return "Love-All";
 
