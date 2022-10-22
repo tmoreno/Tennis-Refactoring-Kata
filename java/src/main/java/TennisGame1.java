@@ -23,6 +23,10 @@ public class TennisGame1 implements TennisGame {
             return drawScore(pointsPlayer1);
         }
 
+        if (isAdvantage(pointsPlayer1, pointsPlayer2)) {
+            return advantageScore(pointsPlayer1, pointsPlayer2);
+        }
+
         if (isGamePoint(pointsPlayer1, pointsPlayer2)) {
             return gamePointScore(pointsPlayer1, pointsPlayer2);
         }
