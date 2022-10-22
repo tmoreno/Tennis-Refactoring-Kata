@@ -14,10 +14,10 @@ public class TennisGame2 implements TennisGame {
 
     public void wonPoint(String player) {
         if ("player1".equals(player)) {
-            P1Score();
+            pointsPlayer1++;
         }
         else {
-            P2Score();
+            pointsPlayer2++;
         }
     }
 
@@ -105,13 +105,5 @@ public class TennisGame2 implements TennisGame {
             score = "Win for player2";
         }
         return score;
-    }
-
-    public void P1Score(){
-        pointsPlayer1++;
-    }
-
-    public void P2Score(){
-        pointsPlayer2++;
     }
 }
