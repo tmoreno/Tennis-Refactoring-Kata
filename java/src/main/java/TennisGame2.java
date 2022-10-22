@@ -1,12 +1,16 @@
 
 public class TennisGame2 implements TennisGame {
-    public int P1point = 0;
-    public int P2point = 0;
     
-    public String P1res = "";
-    public String P2res = "";
+    public int P1point;
+    public int P2point;
+    public String P1res;
+    public String P2res;
 
     public TennisGame2(String player1Name, String player2Name) {
+        P1point = 0;
+        P2point = 0;
+        P1res = "";
+        P2res = "";
     }
 
     public String getScore(){
