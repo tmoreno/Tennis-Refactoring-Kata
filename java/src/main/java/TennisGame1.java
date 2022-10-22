@@ -73,21 +73,18 @@ public class TennisGame1 implements TennisGame {
 
     private String gameScore() {
         String score = "";
-        int tempScore=0;
 
-        tempScore = pointsPlayer1;
-        score = playerScore(score, tempScore);
+        score = playerScore(score, pointsPlayer1);
 
         score += "-";
 
-        tempScore = pointsPlayer2;
-        score = playerScore(score, tempScore);
+        score = playerScore(score, pointsPlayer2);
 
         return score;
     }
 
-    private static String playerScore(String score, int tempScore) {
-        switch (tempScore) {
+    private static String playerScore(String score, int pointsPlayer) {
+        switch (pointsPlayer) {
             case 0:
                 score += "Love";
                 break;
