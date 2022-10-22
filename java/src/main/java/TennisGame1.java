@@ -73,6 +73,21 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
+    private boolean isWinner(int pointsPlayer1, int pointsPlayer2) {
+        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
+
+        return (pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 2;
+    }
+
+    private String winnerScore(int pointsPlayer1, int pointsPlayer2) {
+        if (pointsPlayer1 > pointsPlayer2) {
+            return "Win for player1";
+        }
+        else {
+            return "Win for player2";
+        }
+    }
+
     private String gamePointScore(int pointsPlayer1, int pointsPlayer2) {
         int minusResult = pointsPlayer1 - pointsPlayer2;
 
