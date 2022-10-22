@@ -75,25 +75,43 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         int tempScore=0;
 
-        for (int i=1; i<3; i++)
-        {
-            if (i==1) tempScore = pointsPlayer1;
-            else { score+="-"; tempScore = pointsPlayer2;}
-            switch(tempScore)
-            {
-                case 0:
-                    score+="Love";
-                    break;
-                case 1:
-                    score+="Fifteen";
-                    break;
-                case 2:
-                    score+="Thirty";
-                    break;
-                case 3:
-                    score+="Forty";
-                    break;
-            }
+        if (1 == 1) tempScore = pointsPlayer1;
+        else {
+            score += "-";
+            tempScore = pointsPlayer2;
+        }
+        switch (tempScore) {
+            case 0:
+                score += "Love";
+                break;
+            case 1:
+                score += "Fifteen";
+                break;
+            case 2:
+                score += "Thirty";
+                break;
+            case 3:
+                score += "Forty";
+                break;
+        }
+        if (2 == 1) tempScore = pointsPlayer1;
+        else {
+            score += "-";
+            tempScore = pointsPlayer2;
+        }
+        switch (tempScore) {
+            case 0:
+                score += "Love";
+                break;
+            case 1:
+                score += "Fifteen";
+                break;
+            case 2:
+                score += "Thirty";
+                break;
+            case 3:
+                score += "Forty";
+                break;
         }
         return score;
     }
