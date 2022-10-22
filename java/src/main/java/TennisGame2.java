@@ -25,19 +25,7 @@ public class TennisGame2 implements TennisGame {
         String score = "";
 
         if (pointsPlayer1 == pointsPlayer2 && pointsPlayer1 < 4) {
-            if (pointsPlayer1 == 0) {
-                score = "Love";
-            }
-
-            if (pointsPlayer1 == 1) {
-                score = "Fifteen";
-            }
-
-            if (pointsPlayer1 == 2) {
-                score = "Thirty";
-            }
-
-            score += "-All";
+            score = drawScore(score);
         }
 
         if (pointsPlayer1 == pointsPlayer2 && pointsPlayer1 >= 3) {
@@ -134,6 +122,23 @@ public class TennisGame2 implements TennisGame {
             score = "Win for player2";
         }
 
+        return score;
+    }
+
+    private String drawScore(String score) {
+        if (pointsPlayer1 == 0) {
+            score = "Love";
+        }
+
+        if (pointsPlayer1 == 1) {
+            score = "Fifteen";
+        }
+
+        if (pointsPlayer1 == 2) {
+            score = "Thirty";
+        }
+
+        score += "-All";
         return score;
     }
 }
