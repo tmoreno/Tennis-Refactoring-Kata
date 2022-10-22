@@ -23,34 +23,31 @@ public class TennisGame1 implements TennisGame {
             return drawScore(pointsPlayer1);
         }
 
+        if (isGamePoint(pointsPlayer1, pointsPlayer2)) {
+            return gamePointScore(pointsPlayer1, pointsPlayer2);
+        }
+
         String score = "";
         int tempScore=0;
 
-        if (isGamePoint(pointsPlayer1, pointsPlayer2))
+        for (int i=1; i<3; i++)
         {
-            score = gamePointScore(pointsPlayer1, pointsPlayer2);
-        }
-        else
-        {
-            for (int i=1; i<3; i++)
+            if (i==1) tempScore = pointsPlayer1;
+            else { score+="-"; tempScore = pointsPlayer2;}
+            switch(tempScore)
             {
-                if (i==1) tempScore = pointsPlayer1;
-                else { score+="-"; tempScore = pointsPlayer2;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
+                case 0:
+                    score+="Love";
+                    break;
+                case 1:
+                    score+="Fifteen";
+                    break;
+                case 2:
+                    score+="Thirty";
+                    break;
+                case 3:
+                    score+="Forty";
+                    break;
             }
         }
         return score;
