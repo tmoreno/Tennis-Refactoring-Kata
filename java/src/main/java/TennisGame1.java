@@ -20,7 +20,7 @@ public class TennisGame1 implements TennisGame {
     public String getScore() {
         String score = "";
         int tempScore=0;
-        if (pointsPlayer1 == pointsPlayer2)
+        if (isDraw(pointsPlayer1, pointsPlayer2))
         {
             score = drawScore(pointsPlayer1);
         }
@@ -56,6 +56,10 @@ public class TennisGame1 implements TennisGame {
             }
         }
         return score;
+    }
+
+    private boolean isDraw(int pointsPlayer1, int pointsPlayer2) {
+        return pointsPlayer1 == pointsPlayer2;
     }
 
     private String drawScore(int playerPoints) {
