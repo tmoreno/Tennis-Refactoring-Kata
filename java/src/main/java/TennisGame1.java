@@ -27,7 +27,7 @@ public class TennisGame1 implements TennisGame {
             return gamePointScore(pointsPlayer1, pointsPlayer2);
         }
 
-        return gameScore();
+        return playerScore(pointsPlayer1) + "-" + playerScore(pointsPlayer2);
     }
 
     private boolean isDraw(int pointsPlayer1, int pointsPlayer2) {
@@ -69,10 +69,6 @@ public class TennisGame1 implements TennisGame {
         else {
             return "Win for player2";
         }
-    }
-
-    private String gameScore() {
-        return playerScore(pointsPlayer1) + "-" + playerScore(pointsPlayer2);
     }
 
     private static String playerScore(int pointsPlayer) {
