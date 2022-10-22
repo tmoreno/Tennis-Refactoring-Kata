@@ -27,8 +27,8 @@ public class TennisGame1 implements TennisGame {
             return advantageScore(pointsPlayer1, pointsPlayer2);
         }
 
-        if (isGamePoint(pointsPlayer1, pointsPlayer2)) {
-            return gamePointScore(pointsPlayer1, pointsPlayer2);
+        if (isWinner(pointsPlayer1, pointsPlayer2)) {
+            return winnerScore(pointsPlayer1, pointsPlayer2);
         }
 
         return playerScore(pointsPlayer1) + "-" + playerScore(pointsPlayer2);
@@ -52,10 +52,6 @@ public class TennisGame1 implements TennisGame {
             default:
                 return"Deuce";
         }
-    }
-
-    private boolean isGamePoint(int pointsPlayer1, int pointsPlayer2) {
-        return pointsPlayer1 >= 4 || pointsPlayer2 >= 4;
     }
 
     private boolean isAdvantage(int pointsPlayer1, int pointsPlayer2) {
@@ -87,24 +83,7 @@ public class TennisGame1 implements TennisGame {
             return "Win for player2";
         }
     }
-
-    private String gamePointScore(int pointsPlayer1, int pointsPlayer2) {
-        int minusResult = pointsPlayer1 - pointsPlayer2;
-
-        if (minusResult == 1) {
-            return "Advantage player1";
-        }
-        else if (minusResult == -1) {
-            return "Advantage player2";
-        }
-        else if (minusResult >= 2) {
-            return "Win for player1";
-        }
-        else {
-            return "Win for player2";
-        }
-    }
-
+    
     private static String playerScore(int pointsPlayer) {
         switch (pointsPlayer) {
             case 0:
