@@ -27,30 +27,7 @@ public class TennisGame1 implements TennisGame {
             return gamePointScore(pointsPlayer1, pointsPlayer2);
         }
 
-        String score = "";
-        int tempScore=0;
-
-        for (int i=1; i<3; i++)
-        {
-            if (i==1) tempScore = pointsPlayer1;
-            else { score+="-"; tempScore = pointsPlayer2;}
-            switch(tempScore)
-            {
-                case 0:
-                    score+="Love";
-                    break;
-                case 1:
-                    score+="Fifteen";
-                    break;
-                case 2:
-                    score+="Thirty";
-                    break;
-                case 3:
-                    score+="Forty";
-                    break;
-            }
-        }
-        return score;
+        return gameScore();
     }
 
     private boolean isDraw(int pointsPlayer1, int pointsPlayer2) {
@@ -92,5 +69,32 @@ public class TennisGame1 implements TennisGame {
         else {
             return "Win for player2";
         }
+    }
+
+    private String gameScore() {
+        String score = "";
+        int tempScore=0;
+
+        for (int i=1; i<3; i++)
+        {
+            if (i==1) tempScore = pointsPlayer1;
+            else { score+="-"; tempScore = pointsPlayer2;}
+            switch(tempScore)
+            {
+                case 0:
+                    score+="Love";
+                    break;
+                case 1:
+                    score+="Fifteen";
+                    break;
+                case 2:
+                    score+="Thirty";
+                    break;
+                case 3:
+                    score+="Forty";
+                    break;
+            }
+        }
+        return score;
     }
 }
