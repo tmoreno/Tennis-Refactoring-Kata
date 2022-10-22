@@ -28,7 +28,7 @@ public class TennisGame1 implements TennisGame {
 
         if (pointsPlayer1 >=4 || pointsPlayer2 >=4)
         {
-            score = gamePointScore();
+            score = gamePointScore(pointsPlayer1, pointsPlayer2);
         }
         else
         {
@@ -76,7 +76,7 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
-    private String gamePointScore() {
+    private String gamePointScore(int pointsPlayer1, int pointsPlayer2) {
         int minusResult = pointsPlayer1 - pointsPlayer2;
 
         if (minusResult == 1) {
