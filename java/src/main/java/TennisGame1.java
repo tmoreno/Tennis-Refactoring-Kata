@@ -26,7 +26,7 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         int tempScore=0;
 
-        if (isGamePoint())
+        if (isGamePoint(pointsPlayer1, pointsPlayer2))
         {
             score = gamePointScore(pointsPlayer1, pointsPlayer2);
         }
@@ -76,7 +76,7 @@ public class TennisGame1 implements TennisGame {
         }
     }
 
-    private boolean isGamePoint() {
+    private boolean isGamePoint(int pointsPlayer1, int pointsPlayer2) {
         return pointsPlayer1 >= 4 || pointsPlayer2 >= 4;
     }
 
