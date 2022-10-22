@@ -75,11 +75,7 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         int tempScore=0;
 
-        if (1 == 1) tempScore = pointsPlayer1;
-        else {
-            score += "-";
-            tempScore = pointsPlayer2;
-        }
+        tempScore = pointsPlayer1;
         switch (tempScore) {
             case 0:
                 score += "Love";
@@ -94,11 +90,10 @@ public class TennisGame1 implements TennisGame {
                 score += "Forty";
                 break;
         }
-        if (2 == 1) tempScore = pointsPlayer1;
-        else {
-            score += "-";
-            tempScore = pointsPlayer2;
-        }
+
+        score += "-";
+
+        tempScore = pointsPlayer2;
         switch (tempScore) {
             case 0:
                 score += "Love";
@@ -113,6 +108,7 @@ public class TennisGame1 implements TennisGame {
                 score += "Forty";
                 break;
         }
+        
         return score;
     }
 }
