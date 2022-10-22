@@ -24,12 +24,8 @@ public class TennisGame2 implements TennisGame {
     public String getScore(){
         String score = "";
 
-        if (pointsPlayer1 == pointsPlayer2 && pointsPlayer1 < 4) {
+        if (pointsPlayer1 == pointsPlayer2) {
             score = drawScore(pointsPlayer1);
-        }
-
-        if (pointsPlayer1 == pointsPlayer2 && pointsPlayer1 >= 3) {
-            score = "Deuce";
         }
 
         if (pointsPlayer1 > 0 && pointsPlayer2 == 0) {
@@ -133,8 +129,11 @@ public class TennisGame2 implements TennisGame {
             case 1:
                 return "Fifteen-All";
 
-            default:
+            case 2:
                 return "Thirty-All";
+
+            default:
+                return "Deuce";
         }
     }
 }
