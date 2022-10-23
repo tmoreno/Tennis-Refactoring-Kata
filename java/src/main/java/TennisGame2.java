@@ -1,8 +1,8 @@
 
 public class TennisGame2 implements TennisGame {
 
-    public int pointsPlayer1;
-    public int pointsPlayer2;
+    private int pointsPlayer1;
+    private int pointsPlayer2;
 
     public TennisGame2() {
         pointsPlayer1 = 0;
