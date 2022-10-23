@@ -30,12 +30,14 @@ public class TennisGame2 implements TennisGame {
             return winnerScore(pointsPlayer1, pointsPlayer2);
         }
 
-        if (pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) {
-            return "Advantage player1";
-        }
+        if ((pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) || (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3)) {
+            if (pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) {
+                return "Advantage player1";
+            }
 
-        if (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3) {
-            return "Advantage player2";
+            if (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3) {
+                return "Advantage player2";
+            }
         }
 
         String score = "";
