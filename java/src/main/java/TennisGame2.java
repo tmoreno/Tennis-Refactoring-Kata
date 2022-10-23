@@ -31,11 +31,10 @@ public class TennisGame2 implements TennisGame {
         }
 
         if ((pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) || (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3)) {
-            if (pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) {
+            if (pointsPlayer1 > pointsPlayer2) {
                 return "Advantage player1";
             }
-
-            if (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3) {
+            else {
                 return "Advantage player2";
             }
         }
