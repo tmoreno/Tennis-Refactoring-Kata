@@ -88,7 +88,11 @@ public class TennisGame2 implements TennisGame {
         String score = "";
         String P1res = "";
         String P2res = "";
+
         if (pointsPlayer1 == 0 || pointsPlayer2 == 0) {
+            P1res = "Love";
+            P2res = "Love";
+
             if (pointsPlayer1 > 0) {
                 if (pointsPlayer1 == 1) {
                     P1res = "Fifteen";
@@ -101,9 +105,6 @@ public class TennisGame2 implements TennisGame {
                 if (pointsPlayer1 == 3) {
                     P1res = "Forty";
                 }
-
-                P2res = "Love";
-                score = P1res + "-" + P2res;
             }
 
             if (pointsPlayer2 > 0) {
@@ -118,10 +119,9 @@ public class TennisGame2 implements TennisGame {
                 if (pointsPlayer2 == 3) {
                     P2res = "Forty";
                 }
-
-                P1res = "Love";
-                score = P1res + "-" + P2res;
             }
+
+            return P1res + "-" + P2res;
         }
 
         if (pointsPlayer1 > pointsPlayer2 && pointsPlayer1 < 4) {
