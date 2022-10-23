@@ -93,39 +93,24 @@ public class TennisGame2 implements TennisGame {
             P2res = "Love";
 
             if (pointsPlayer1 > 0) {
-                P1res = player1Score(pointsPlayer1);
+                P1res = playerScore(pointsPlayer1);
             }
 
             if (pointsPlayer2 > 0) {
-                P2res = player2Score(P2res);
+                P2res = playerScore(pointsPlayer2);
             }
 
             return P1res + "-" + P2res;
         }
 
-        P1res = player1Score(pointsPlayer1);
+        P1res = playerScore(pointsPlayer1);
 
-        P2res = player2Score(P2res);
+        P2res = playerScore(pointsPlayer2);
 
         return P1res + "-" + P2res;
     }
 
-    private String player2Score(String P2res) {
-        if (pointsPlayer2 == 1) {
-            P2res = "Fifteen";
-        }
-
-        if (pointsPlayer2 == 2) {
-            P2res = "Thirty";
-        }
-
-        if (pointsPlayer2 == 3) {
-            P2res = "Forty";
-        }
-        return P2res;
-    }
-
-    private String player1Score(int playerPoints) {
+    private String playerScore(int playerPoints) {
         switch (playerPoints) {
             case 1:
                 return "Fifteen";
