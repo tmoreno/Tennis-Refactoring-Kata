@@ -123,39 +123,36 @@ public class TennisGame2 implements TennisGame {
             return P1res + "-" + P2res;
         }
 
-        if (pointsPlayer1 > pointsPlayer2) {
-            if (pointsPlayer1 == 2) {
-                P1res = "Thirty";
-            }
-
-            if (pointsPlayer1 == 3) {
-                P1res = "Forty";
-            }
-
-            if (pointsPlayer2 == 1) {
-                P2res = "Fifteen";
-            }
-
-            if (pointsPlayer2 == 2) {
-                P2res = "Thirty";
-            }
+        if (pointsPlayer1 == 2) {
+            P1res = "Thirty";
         }
-        else {
-            if (pointsPlayer2 == 2) {
-                P2res = "Thirty";
-            }
 
-            if (pointsPlayer2 == 3) {
-                P2res = "Forty";
-            }
+        if (pointsPlayer1 == 3) {
+            P1res = "Forty";
+        }
 
-            if (pointsPlayer1 == 1) {
-                P1res = "Fifteen";
-            }
+        if (pointsPlayer2 == 1) {
+            P2res = "Fifteen";
+        }
 
-            if (pointsPlayer1 == 2) {
-                P1res = "Thirty";
-            }
+        if (pointsPlayer2 == 2) {
+            P2res = "Thirty";
+        }
+
+        if (pointsPlayer2 == 2) {
+            P2res = "Thirty";
+        }
+
+        if (pointsPlayer2 == 3) {
+            P2res = "Forty";
+        }
+
+        if (pointsPlayer1 == 1) {
+            P1res = "Fifteen";
+        }
+
+        if (pointsPlayer1 == 2) {
+            P1res = "Thirty";
         }
 
         return P1res + "-" + P2res;
