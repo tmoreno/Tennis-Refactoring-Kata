@@ -37,13 +37,13 @@ public class TennisGame3 implements TennisGame {
                 default:
                     return "Win for " + playerWithMorePoints;
             }
-        } else {
-            if (player1Points == player2Points) {
-                return playerScore(player1Points) + "-All";
-            }
-
-            return playerScore(player1Points) + "-" + playerScore(player2Points);
         }
+        
+        if (player1Points == player2Points) {
+            return playerScore(player1Points) + "-All";
+        }
+
+        return playerScore(player1Points) + "-" + playerScore(player2Points);
     }
 
     private String playerScore(int playerPoints) {
