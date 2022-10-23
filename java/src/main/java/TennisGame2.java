@@ -30,7 +30,7 @@ public class TennisGame2 implements TennisGame {
             return winnerScore(pointsPlayer1, pointsPlayer2);
         }
 
-        if ((pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) || (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3)) {
+        if (isAdvantage(pointsPlayer1, pointsPlayer2)) {
             return advantageScore(pointsPlayer1, pointsPlayer2);
         }
 
@@ -148,6 +148,10 @@ public class TennisGame2 implements TennisGame {
         else {
             return "Win for player2";
         }
+    }
+
+    private boolean isAdvantage(int pointsPlayer1, int pointsPlayer2) {
+        return (pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) || (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3);
     }
 
     private String advantageScore(int pointsPlayer1, int pointsPlayer2) {
