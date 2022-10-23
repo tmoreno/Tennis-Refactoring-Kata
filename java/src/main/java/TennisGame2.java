@@ -28,38 +28,40 @@ public class TennisGame2 implements TennisGame {
 
         String score = "";
 
-        if (pointsPlayer1 > 0 && pointsPlayer2 == 0) {
-            if (pointsPlayer1 == 1) {
-                P1res = "Fifteen";
+        if (pointsPlayer1 == 0 || pointsPlayer2 == 0) {
+            if (pointsPlayer1 > 0) {
+                if (pointsPlayer1 == 1) {
+                    P1res = "Fifteen";
+                }
+
+                if (pointsPlayer1 == 2) {
+                    P1res = "Thirty";
+                }
+
+                if (pointsPlayer1 == 3) {
+                    P1res = "Forty";
+                }
+
+                P2res = "Love";
+                score = P1res + "-" + P2res;
             }
 
-            if (pointsPlayer1 == 2) {
-                P1res = "Thirty";
+            if (pointsPlayer2 > 0) {
+                if (pointsPlayer2 == 1) {
+                    P2res = "Fifteen";
+                }
+
+                if (pointsPlayer2 == 2) {
+                    P2res = "Thirty";
+                }
+
+                if (pointsPlayer2 == 3) {
+                    P2res = "Forty";
+                }
+
+                P1res = "Love";
+                score = P1res + "-" + P2res;
             }
-
-            if (pointsPlayer1 == 3) {
-                P1res = "Forty";
-            }
-
-            P2res = "Love";
-            score = P1res + "-" + P2res;
-        }
-
-        if (pointsPlayer2 > 0 && pointsPlayer1 == 0) {
-            if (pointsPlayer2 == 1) {
-                P2res = "Fifteen";
-            }
-
-            if (pointsPlayer2 == 2) {
-                P2res = "Thirty";
-            }
-
-            if (pointsPlayer2 == 3) {
-                P2res = "Forty";
-            }
-
-            P1res = "Love";
-            score = P1res + "-" + P2res;
         }
 
         if (pointsPlayer1 > pointsPlayer2 && pointsPlayer1 < 4) {
