@@ -2,14 +2,10 @@
 public class TennisGame2 implements TennisGame {
     public int pointsPlayer1;
     public int pointsPlayer2;
-    public String P1res;
-    public String P2res;
 
     public TennisGame2() {
         pointsPlayer1 = 0;
         pointsPlayer2 = 0;
-        P1res = "";
-        P2res = "";
     }
 
     public void wonPoint(String player) {
@@ -35,7 +31,8 @@ public class TennisGame2 implements TennisGame {
         }
 
         String score = "";
-
+        String P1res = "";
+        String P2res = "";
         if (pointsPlayer1 == 0 || pointsPlayer2 == 0) {
             if (pointsPlayer1 > 0) {
                 if (pointsPlayer1 == 1) {
