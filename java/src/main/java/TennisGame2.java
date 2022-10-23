@@ -1,5 +1,6 @@
 
 public class TennisGame2 implements TennisGame {
+
     public int pointsPlayer1;
     public int pointsPlayer2;
 
@@ -30,6 +31,60 @@ public class TennisGame2 implements TennisGame {
             return advantageScore(pointsPlayer1, pointsPlayer2);
         }
 
+        return getGameScore();
+    }
+
+    private boolean isDraw(int pointsPlayer1, int pointsPlayer2) {
+        return pointsPlayer1 == pointsPlayer2;
+    }
+
+    private String drawScore(int playerPoints) {
+        switch (playerPoints) {
+            case 0:
+                return "Love-All";
+
+            case 1:
+                return "Fifteen-All";
+
+            case 2:
+                return "Thirty-All";
+
+            default:
+                return "Deuce";
+        }
+    }
+
+    private boolean isWinner(int pointsPlayer1, int pointsPlayer2) {
+        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
+
+        return (pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 2;
+    }
+
+    private String winnerScore(int pointsPlayer1, int pointsPlayer2) {
+        if (pointsPlayer1 >= pointsPlayer2) {
+            return "Win for player1";
+        }
+        else {
+            return "Win for player2";
+        }
+    }
+
+    private boolean isAdvantage(int pointsPlayer1, int pointsPlayer2) {
+        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
+
+        return (pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 1;
+    }
+
+    private String advantageScore(int pointsPlayer1, int pointsPlayer2) {
+        if (pointsPlayer1 > pointsPlayer2) {
+            return "Advantage player1";
+        }
+        else {
+            return "Advantage player2";
+        }
+    }
+
+    private String getGameScore() {
         String score = "";
         String P1res = "";
         String P2res = "";
@@ -110,55 +165,5 @@ public class TennisGame2 implements TennisGame {
         }
 
         return score;
-    }
-
-    private boolean isDraw(int pointsPlayer1, int pointsPlayer2) {
-        return pointsPlayer1 == pointsPlayer2;
-    }
-
-    private String drawScore(int playerPoints) {
-        switch (playerPoints) {
-            case 0:
-                return "Love-All";
-
-            case 1:
-                return "Fifteen-All";
-
-            case 2:
-                return "Thirty-All";
-
-            default:
-                return "Deuce";
-        }
-    }
-
-    private boolean isWinner(int pointsPlayer1, int pointsPlayer2) {
-        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
-
-        return (pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 2;
-    }
-
-    private String winnerScore(int pointsPlayer1, int pointsPlayer2) {
-        if (pointsPlayer1 >= pointsPlayer2) {
-            return "Win for player1";
-        }
-        else {
-            return "Win for player2";
-        }
-    }
-
-    private boolean isAdvantage(int pointsPlayer1, int pointsPlayer2) {
-        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
-
-        return (pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 1;
-    }
-
-    private String advantageScore(int pointsPlayer1, int pointsPlayer2) {
-        if (pointsPlayer1 > pointsPlayer2) {
-            return "Advantage player1";
-        }
-        else {
-            return "Advantage player2";
-        }
     }
 }
