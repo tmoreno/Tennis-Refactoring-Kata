@@ -124,7 +124,7 @@ public class TennisGame2 implements TennisGame {
             return P1res + "-" + P2res;
         }
 
-        if (pointsPlayer1 > pointsPlayer2 && pointsPlayer1 < 4) {
+        if (pointsPlayer1 > pointsPlayer2) {
             if (pointsPlayer1 == 2) {
                 P1res = "Thirty";
             }
@@ -144,7 +144,7 @@ public class TennisGame2 implements TennisGame {
             score = P1res + "-" + P2res;
         }
 
-        if (pointsPlayer2 > pointsPlayer1 && pointsPlayer2 < 4) {
+        if (pointsPlayer2 > pointsPlayer1) {
             if (pointsPlayer2 == 2) {
                 P2res = "Thirty";
             }
