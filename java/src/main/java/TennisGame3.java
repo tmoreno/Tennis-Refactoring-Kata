@@ -36,7 +36,11 @@ public class TennisGame3 implements TennisGame {
             String s = player1Points > player2Points ? player1Name : player2Name;
             int diff = Math.abs(player1Points - player2Points);
 
-            return (diff == 1) ? "Advantage " + s : "Win for " + s;
+            if (diff == 1) {
+                return "Advantage " + s;
+            } else {
+                return "Win for " + s;
+            }
         }
     }
 
