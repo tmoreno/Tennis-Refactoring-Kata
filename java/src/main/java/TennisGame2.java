@@ -28,12 +28,7 @@ public class TennisGame2 implements TennisGame {
 
         int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
         if ((pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 2) {
-            if (pointsPlayer1 >= pointsPlayer2) {
-                return "Win for player1";
-            }
-            else {
-                return "Win for player2";
-            }
+            return winnerScore(pointsPlayer1, pointsPlayer2);
         }
 
         String score = "";
@@ -142,6 +137,15 @@ public class TennisGame2 implements TennisGame {
 
             default:
                 return "Deuce";
+        }
+    }
+
+    private String winnerScore(int pointsPlayer1, int pointsPlayer2) {
+        if (pointsPlayer1 >= pointsPlayer2) {
+            return "Win for player1";
+        }
+        else {
+            return "Win for player2";
         }
     }
 }
