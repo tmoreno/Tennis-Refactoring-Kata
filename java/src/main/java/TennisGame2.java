@@ -85,7 +85,6 @@ public class TennisGame2 implements TennisGame {
     }
 
     private String getGameScore() {
-        String score = "";
         String P1res = "";
         String P2res = "";
 
@@ -140,11 +139,8 @@ public class TennisGame2 implements TennisGame {
             if (pointsPlayer2 == 2) {
                 P2res = "Thirty";
             }
-
-            score = P1res + "-" + P2res;
         }
-
-        if (pointsPlayer2 > pointsPlayer1) {
+        else {
             if (pointsPlayer2 == 2) {
                 P2res = "Thirty";
             }
@@ -160,10 +156,8 @@ public class TennisGame2 implements TennisGame {
             if (pointsPlayer1 == 2) {
                 P1res = "Thirty";
             }
-
-            score = P1res + "-" + P2res;
         }
 
-        return score;
+        return P1res + "-" + P2res;
     }
 }
