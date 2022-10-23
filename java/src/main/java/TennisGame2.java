@@ -151,7 +151,9 @@ public class TennisGame2 implements TennisGame {
     }
 
     private boolean isAdvantage(int pointsPlayer1, int pointsPlayer2) {
-        return (pointsPlayer1 > pointsPlayer2 && pointsPlayer2 >= 3) || (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3);
+        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
+
+        return (pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 1;
     }
 
     private String advantageScore(int pointsPlayer1, int pointsPlayer2) {
