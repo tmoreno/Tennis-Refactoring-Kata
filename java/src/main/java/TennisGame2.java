@@ -123,6 +123,10 @@ public class TennisGame2 implements TennisGame {
             return P1res + "-" + P2res;
         }
 
+        if (pointsPlayer1 == 1) {
+            P1res = "Fifteen";
+        }
+
         if (pointsPlayer1 == 2) {
             P1res = "Thirty";
         }
@@ -139,20 +143,8 @@ public class TennisGame2 implements TennisGame {
             P2res = "Thirty";
         }
 
-        if (pointsPlayer2 == 2) {
-            P2res = "Thirty";
-        }
-
         if (pointsPlayer2 == 3) {
             P2res = "Forty";
-        }
-
-        if (pointsPlayer1 == 1) {
-            P1res = "Fifteen";
-        }
-
-        if (pointsPlayer1 == 2) {
-            P1res = "Thirty";
         }
 
         return P1res + "-" + P2res;
