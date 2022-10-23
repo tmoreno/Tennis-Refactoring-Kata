@@ -1,6 +1,8 @@
 
 public class TennisGame3 implements TennisGame {
 
+    private static final String[] SCORES = {"Love", "Fifteen", "Thirty", "Forty"};
+
     private final String player1Name;
     private final String player2Name;
     private int player1Points;
@@ -22,9 +24,8 @@ public class TennisGame3 implements TennisGame {
     public String getScore() {
         String s;
         if (player1Points < 4 && player2Points < 4 && !(player1Points + player2Points == 6)) {
-            String[] p = new String[]{"Love", "Fifteen", "Thirty", "Forty"}; 
-            s = p[player1Points];
-            return (player1Points == player2Points) ? s + "-All" : s + "-" + p[player2Points];
+            s = SCORES[player1Points];
+            return (player1Points == player2Points) ? s + "-All" : s + "-" + SCORES[player2Points];
         } else {
             if (player1Points == player2Points)
                 return "Deuce";
