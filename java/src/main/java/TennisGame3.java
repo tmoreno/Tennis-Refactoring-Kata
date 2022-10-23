@@ -23,20 +23,7 @@ public class TennisGame3 implements TennisGame {
 
     public String getScore() {
         if (isGamePoint(player1Points, player2Points)) {
-            String playerWithMorePoints = player1Points > player2Points ? player1Name : player2Name;
-
-            int diff = Math.abs(player1Points - player2Points);
-
-            switch (diff) {
-                case 0:
-                    return "Deuce";
-
-                case 1:
-                    return "Advantage " + playerWithMorePoints;
-
-                default:
-                    return "Win for " + playerWithMorePoints;
-            }
+            return gamePointScore(player1Points, player2Points);
         }
 
         if (player1Points == player2Points) {
@@ -48,6 +35,23 @@ public class TennisGame3 implements TennisGame {
 
     private boolean isGamePoint(int player1Points, int player2Points) {
         return player1Points >= 4 || player2Points >= 4 || player1Points + player2Points == 6;
+    }
+
+    private String gamePointScore(int player1Points, int player2Points) {
+        String playerWithMorePoints = player1Points > player2Points ? player1Name : player2Name;
+
+        int diff = Math.abs(player1Points - player2Points);
+
+        switch (diff) {
+            case 0:
+                return "Deuce";
+
+            case 1:
+                return "Advantage " + playerWithMorePoints;
+
+            default:
+                return "Win for " + playerWithMorePoints;
+        }
     }
 
     private String playerScore(int playerPoints) {
