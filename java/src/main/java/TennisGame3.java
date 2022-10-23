@@ -29,17 +29,19 @@ public class TennisGame3 implements TennisGame {
 
             return playerScore(player1Points) + "-" + playerScore(player2Points);
         } else {
-            if (player1Points == player2Points) {
-                return "Deuce";
-            }
+            String playerWithMorePoints = player1Points > player2Points ? player1Name : player2Name;
 
-            String s = player1Points > player2Points ? player1Name : player2Name;
             int diff = Math.abs(player1Points - player2Points);
 
-            if (diff == 1) {
-                return "Advantage " + s;
-            } else {
-                return "Win for " + s;
+            switch (diff) {
+                case 0:
+                    return "Deuce";
+
+                case 1:
+                    return "Advantage " + playerWithMorePoints;
+
+                default:
+                    return "Win for " + playerWithMorePoints;
             }
         }
     }
