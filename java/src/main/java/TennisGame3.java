@@ -24,13 +24,17 @@ public class TennisGame3 implements TennisGame {
     public String getScore() {
         String s;
         if (player1Points < 4 && player2Points < 4 && !(player1Points + player2Points == 6)) {
-            s = SCORES[player1Points];
-            return (player1Points == player2Points) ? s + "-All" : s + "-" + SCORES[player2Points];
+            s = playerScore(player1Points);
+            return (player1Points == player2Points) ? s + "-All" : s + "-" + playerScore(player2Points);
         } else {
             if (player1Points == player2Points)
                 return "Deuce";
             s = player1Points > player2Points ? player1Name : player2Name;
             return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + s : "Win for " + s;
         }
+    }
+
+    private String playerScore(int playerPoints) {
+        return SCORES[playerPoints];
     }
 }
