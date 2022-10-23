@@ -26,8 +26,7 @@ public class TennisGame2 implements TennisGame {
             return drawScore(pointsPlayer1);
         }
 
-        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
-        if ((pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 2) {
+        if (isWinner(pointsPlayer1, pointsPlayer2)) {
             return winnerScore(pointsPlayer1, pointsPlayer2);
         }
 
@@ -138,6 +137,12 @@ public class TennisGame2 implements TennisGame {
             default:
                 return "Deuce";
         }
+    }
+
+    private boolean isWinner(int pointsPlayer1, int pointsPlayer2) {
+        int diff = Math.abs(pointsPlayer1 - pointsPlayer2);
+
+        return (pointsPlayer1 >= 4 || pointsPlayer2 >= 4) && diff >= 2;
     }
 
     private String winnerScore(int pointsPlayer1, int pointsPlayer2) {
