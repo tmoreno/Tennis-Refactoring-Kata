@@ -26,6 +26,14 @@ public class TennisGame2 implements TennisGame {
             return drawScore(pointsPlayer1);
         }
 
+        if (pointsPlayer1 >= 4 && pointsPlayer2 >= 0 && (pointsPlayer1 - pointsPlayer2) >= 2) {
+            return "Win for player1";
+        }
+
+        if (pointsPlayer2 >= 4 && pointsPlayer1 >= 0 && (pointsPlayer2 - pointsPlayer1) >= 2) {
+            return "Win for player2";
+        }
+
         String score = "";
 
         if (pointsPlayer1 == 0 || pointsPlayer2 == 0) {
@@ -110,14 +118,6 @@ public class TennisGame2 implements TennisGame {
 
         if (pointsPlayer2 > pointsPlayer1 && pointsPlayer1 >= 3) {
             score = "Advantage player2";
-        }
-
-        if (pointsPlayer1 >= 4 && pointsPlayer2 >= 0 && (pointsPlayer1 - pointsPlayer2) >= 2) {
-            score = "Win for player1";
-        }
-
-        if (pointsPlayer2 >= 4 && pointsPlayer1 >= 0 && (pointsPlayer2 - pointsPlayer1) >= 2) {
-            score = "Win for player2";
         }
 
         return score;
