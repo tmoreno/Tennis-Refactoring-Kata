@@ -85,13 +85,6 @@ public class TennisGame2 implements TennisGame {
     }
 
     private String getGameScore() {
-        if (pointsPlayer1 == 0 || pointsPlayer2 == 0) {
-            String P1res = playerScore(pointsPlayer1);
-            String P2res = playerScore(pointsPlayer2);
-
-            return P1res + "-" + P2res;
-        }
-
         return playerScore(pointsPlayer1) + "-" + playerScore(pointsPlayer2);
     }
 
