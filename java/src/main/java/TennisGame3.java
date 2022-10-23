@@ -11,6 +11,14 @@ public class TennisGame3 implements TennisGame {
         this.player2Name = player2Name;
     }
 
+    public void wonPoint(String playerName) {
+        if (playerName == "player1")
+            this.player1Points += 1;
+        else
+            this.player2Points += 1;
+
+    }
+
     public String getScore() {
         String s;
         if (player1Points < 4 && player2Points < 4 && !(player1Points + player2Points == 6)) {
@@ -24,13 +32,4 @@ public class TennisGame3 implements TennisGame {
             return ((player1Points - player2Points)*(player1Points - player2Points) == 1) ? "Advantage " + s : "Win for " + s;
         }
     }
-    
-    public void wonPoint(String playerName) {
-        if (playerName == "player1")
-            this.player1Points += 1;
-        else
-            this.player2Points += 1;
-        
-    }
-
 }
