@@ -93,48 +93,24 @@ public class TennisGame2 implements TennisGame {
             P2res = "Love";
 
             if (pointsPlayer1 > 0) {
-                if (pointsPlayer1 == 1) {
-                    P1res = "Fifteen";
-                }
-
-                if (pointsPlayer1 == 2) {
-                    P1res = "Thirty";
-                }
-
-                if (pointsPlayer1 == 3) {
-                    P1res = "Forty";
-                }
+                P1res = player1Score(P1res);
             }
 
             if (pointsPlayer2 > 0) {
-                if (pointsPlayer2 == 1) {
-                    P2res = "Fifteen";
-                }
-
-                if (pointsPlayer2 == 2) {
-                    P2res = "Thirty";
-                }
-
-                if (pointsPlayer2 == 3) {
-                    P2res = "Forty";
-                }
+                P2res = player2Score(P2res);
             }
 
             return P1res + "-" + P2res;
         }
 
-        if (pointsPlayer1 == 1) {
-            P1res = "Fifteen";
-        }
+        P1res = player1Score(P1res);
 
-        if (pointsPlayer1 == 2) {
-            P1res = "Thirty";
-        }
+        P2res = player2Score(P2res);
 
-        if (pointsPlayer1 == 3) {
-            P1res = "Forty";
-        }
+        return P1res + "-" + P2res;
+    }
 
+    private String player2Score(String P2res) {
         if (pointsPlayer2 == 1) {
             P2res = "Fifteen";
         }
@@ -146,7 +122,21 @@ public class TennisGame2 implements TennisGame {
         if (pointsPlayer2 == 3) {
             P2res = "Forty";
         }
+        return P2res;
+    }
 
-        return P1res + "-" + P2res;
+    private String player1Score(String P1res) {
+        if (pointsPlayer1 == 1) {
+            P1res = "Fifteen";
+        }
+
+        if (pointsPlayer1 == 2) {
+            P1res = "Thirty";
+        }
+
+        if (pointsPlayer1 == 3) {
+            P1res = "Forty";
+        }
+        return P1res;
     }
 }
